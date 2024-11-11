@@ -50,12 +50,13 @@ function renderTransactionsWithFilters() {
     const typeInput = document.getElementById('filter-select');
 
     const search = searchInput.value.trim();
-    const category = sortInput.value;
+    const sort = sortInput.value;
     const type = typeInput.value;   
 
     let filteredTransactions = filterTransactionsByType(type);
     filteredTransactions = searchTransactions(filteredTransactions, search);
-    filteredTransactions = sortTransactions(filteredTransactions, category);
+    filteredTransactions = sortTransactions(filteredTransactions, sort);
+    
     renderTransactions(filteredTransactions);
 }
 
